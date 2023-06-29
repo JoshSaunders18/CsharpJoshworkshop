@@ -35,10 +35,16 @@ Student KitWalker = new Student();
 
 KitWalker.NameOfStudent = "Kit Walker";
 KitWalker.StudyHoursPerWeek = 30;
-KitWalker.StudyWeeksCompleted = 30;
+KitWalker.StudyWeeksCompleted = 10;
 
 KitWalker.BuildStudentInformation();
 KitWalker.DisplayStudentInformation();
+
+//new student
+Student Josh = new Student();
+Josh.NameOfStudent = "Josh";
+Josh.StudyHoursPerWeek = 5;
+Josh.StudyWeeksCompleted = 0;
 
 //500 hours is the amount of time it takes to become 
 //a beginner developer. 
@@ -56,3 +62,34 @@ int TotalNumberofHoursToBecomeDeveloper = 500;
 //10 weeks are already completed. 
 // remaining weeks = 50 - 10 = 40 weeks
 // eventually, catwoman will be a developer in 40 weeks. 
+
+
+int numberOfWeeksBasedOnStudentWeeklyHoursCommitment =
+    TotalNumberofHoursToBecomeDeveloper / BruceWayne.StudyHoursPerWeek;
+
+//Console.WriteLine(numberOfWeeksBasedOnStudentWeeklyHoursCommitment);
+
+int remainingnumberOfWeeksToStudy =
+    numberOfWeeksBasedOnStudentWeeklyHoursCommitment - BruceWayne.StudyWeeksCompleted;
+
+//Console.WriteLine(remainingnumberOfWeeksToStudy);
+
+string outputforBatmanStudent = $" Student Name : {BruceWayne.NameOfStudent} will need to study for {remainingnumberOfWeeksToStudy} weeks to become a basic beginner developer";
+
+Console.WriteLine(outputforBatmanStudent);
+
+//here, I want to start using the Developer class
+
+Developer DeveloperTesting = new Developer();
+
+DeveloperTesting.CalculatorDeveloperEstimate(BruceWayne.StudyHoursPerWeek, BruceWayne.StudyWeeksCompleted, BruceWayne.NameOfStudent);
+DeveloperTesting.DisplayDeveloperEstimate();
+
+DeveloperTesting.CalculatorDeveloperEstimate(SelinaKyle.StudyHoursPerWeek, SelinaKyle.StudyWeeksCompleted, SelinaKyle.NameOfStudent);
+DeveloperTesting.DisplayDeveloperEstimate();
+
+DeveloperTesting.CalculatorDeveloperEstimate(KitWalker.StudyHoursPerWeek, KitWalker.StudyWeeksCompleted, KitWalker.NameOfStudent);
+DeveloperTesting.DisplayDeveloperEstimate();
+
+DeveloperTesting.CalculatorDeveloperEstimate(Josh.StudyHoursPerWeek, Josh.StudyWeeksCompleted, Josh.NameOfStudent);
+DeveloperTesting.DisplayDeveloperEstimate();
